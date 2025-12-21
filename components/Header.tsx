@@ -1,9 +1,15 @@
 import Container from "./Container";
+import HeaderMenu from "./HeaderMenu";
+import Logo from "./Logo";
 
 const Header = () => {
   return (
-    <header>
-      <Container className="bg-red-300 max-w-full">Header</Container>
+    <header className="bg-white py-5">
+      <Container className="flex justify-between items-center">
+        <Logo></Logo>
+        <HeaderMenu></HeaderMenu>
+        <div>others</div>
+      </Container>
     </header>
   );
 };
