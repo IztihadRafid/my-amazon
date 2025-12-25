@@ -13,14 +13,14 @@ const HeaderMenu = () => {
         <Link
           key={item.title}
           href={item?.href}
-          className={`hover:text-shop_light_green relative group`}
+          className={`hover:text-shop_light_green relative group ${pathname === item.href && 'text-shop_light_green'}`}
         >
           {item?.title}
           <span
-            className={`absolute bg-shop_light_green -bottom-0.5 left-1/2 w-0 h-0.5 group-hover:w-1/2 duration-100 group-hover:left-0`}
+            className={`absolute bg-shop_light_green -bottom-0.5 left-1/2 w-0 h-0.5 group-hover:w-1/2 duration-200 group-hover:left-0  ${pathname === item.href && 'w-1/2 '}`}
           ></span>
           <span
-            className={`absolute bg-shop_light_green -bottom-0.5 right-1/2 w-0 h-0.5 group-hover:w-1/2 duration-100 group-hover:right-0`}
+            className={`absolute bg-shop_light_green -bottom-0.5 right-1/2 w-0 h-0.5 group-hover:w-1/2 duration-200 group-hover:right-0 ${pathname === item.href && 'w-1/2 '}`}
           ></span>
         </Link>
       ))}
