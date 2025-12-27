@@ -5,3 +5,19 @@ export const headerData=[
     // {title:'Contact',href:'/contact'},
     {title:"Hot Deal",href:'/deal'}
 ]
+
+export const quickLinksData = [
+  { title: "About us", href: "/about" },
+  { title: "Contact us", href: "/contact" },
+  { title: "Terms & Conditions", href: "/terms" },
+  { title: "Privacy Policy", href: "/privacy" },
+  { title: "FAQs", href: "/Faqs" }
+]
+
+export const categoriesData = [
+  { title: "Mobile", href: "/mobiles" },
+  { title: "Appliances", href: "/appliances" },
+  { title: "Air Conditioners", href: "/airConditioners" },
+  { title: "Kitchen Appliances", href: "/Kitchenappliances" },
+  { title: "Gadget Accessories", href: "/gadgets" }
+]
