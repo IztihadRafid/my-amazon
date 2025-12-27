@@ -3,7 +3,8 @@ import { Search } from "lucide-react"
 const SearchBar = () => {
   return (
     <div>
-      <Search className="w-6 h-6 hover:text-shop_light_green"></Search>
+      <Search className="w-6 h-6 hover:text-shop_light_green hidden md:block"></Search>
+      
     </div>
   )
 }
