@@ -4,23 +4,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const HeaderMenu = () => {
+  const pathname = usePathname();
 
-    const pathname = usePathname()
-    console.log(pathname)
-    return (
+  return (
     <div className="hidden md:inline-flex w-1/3 items-center gap-7 capitalize font-semibold text-lightColor">
       {headerData?.map((item) => (
         <Link
           key={item.title}
           href={item?.href}
-          className={`hover:text-shop_light_green relative group ${pathname === item.href && 'text-shop_light_green'}`}
+          className={`hover:text-shop_light_green relative group ${pathname === item.href && "text-shop_light_green"}`}
         >
           {item?.title}
           <span
-            className={`absolute bg-shop_light_green -bottom-0.5 left-1/2 w-0 h-0.5 group-hover:w-1/2 duration-200 group-hover:left-0  ${pathname === item.href && 'w-1/2 '}`}
+            className={`absolute bg-shop_light_green -bottom-0.5 left-1/2 w-0 h-0.5 group-hover:w-1/2 duration-200 group-hover:left-0  ${pathname === item.href && "w-1/2 "}`}
           ></span>
           <span
-            className={`absolute bg-shop_light_green -bottom-0.5 right-1/2 w-0 h-0.5 group-hover:w-1/2 duration-200 group-hover:right-0 ${pathname === item.href && 'w-1/2 '}`}
+            className={`absolute bg-shop_light_green -bottom-0.5 right-1/2 w-0 h-0.5 group-hover:w-1/2 duration-200 group-hover:right-0 ${pathname === item.href && "w-1/2 "}`}
           ></span>
         </Link>
       ))}
