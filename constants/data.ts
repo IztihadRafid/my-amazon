@@ -15,9 +15,9 @@ export const quickLinksData = [
 ]
 
 export const categoriesData = [
-  { title: "Mobile", href: "/mobiles" },
-  { title: "Appliances", href: "/appliances" },
-  { title: "Air Conditioners", href: "/airConditioners" },
-  { title: "Kitchen Appliances", href: "/Kitchenappliances" },
-  { title: "Gadget Accessories", href: "/gadgets" }
+  { title: "Mobile", href: "mobiles" },
+  { title: "Appliances", href: "appliances" },
+  { title: "Air Conditioners", href: "airConditioners" },
+  { title: "Kitchen Appliances", href: "Kitchenappliances" },
+  { title: "Gadget Accessories", href: "gadgets" }
 ]

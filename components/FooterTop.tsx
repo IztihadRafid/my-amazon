@@ -37,7 +37,7 @@ const data: ContactItemData[] = [
 
 const FooterTop = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 bg-gray-200 p-8 md:p-20 mx-auto ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 bg-gray-200 p-6 md:p-10 mx-auto ">
       {data?.map((item) => (
         <div key={item.title} className="flex justify-center items-center">
           <div className="p-6 ">{item.icon}</div>
