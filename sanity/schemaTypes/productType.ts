@@ -26,7 +26,7 @@ export const productType = defineType({
             name: 'images',
             title: 'Product Images',
             type: 'array',
-            of: [{ type: 'image', options: { hotspot: true, }},            ],
+            of: [{ type: 'image', options: { hotspot: true, } },],
         }),
         defineField({
             name: 'description',
@@ -41,9 +41,9 @@ export const productType = defineType({
         }),
         defineField({
             name: 'discount',
-            title: 'Discount',
+            title: 'Discount in %',
             type: 'number',
-          validation: (Rule) => Rule.required().min(0),
+            validation: (Rule) => Rule.min(0).max(100),
         }),
         defineField({
             name: 'categories',
@@ -92,7 +92,7 @@ export const productType = defineType({
             name: 'isFeatured',
             title: 'Featured Product',
             type: 'boolean',
-          description: 'Toggle to feature this product',
+            description: 'Toggle to feature this product',
             initialValue: false,
         }),
     ],
@@ -103,13 +103,13 @@ export const productType = defineType({
             subtitle: 'price',
         },
         prepare(selection) {
-            const { title,subtitle,media } = selection;
-           const image = media && media[0];
-           return{
-            title:title,
-            subtitle:`$${subtitle}`,
-            media:image,
-           }
+            const { title, subtitle, media } = selection;
+            const image = media && media[0];
+            return {
+                title: title,
+                subtitle: `$${subtitle}`,
+                media: image,
+            }
         },
     },
 });

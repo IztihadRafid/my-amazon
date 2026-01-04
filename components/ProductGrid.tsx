@@ -40,7 +40,7 @@ const ProductGrid = () => {
       ></HomeTabBar>
       {loading? <LoadingSpinner></LoadingSpinner> :(
         products?.length ?
-         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-8 mt-10">
+         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-6 mt-10">
         {
             products?.map((product)=>(
                 <div key={product._id}>
