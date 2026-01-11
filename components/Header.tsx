@@ -13,9 +13,9 @@ const Header = async () => {
   const user = await currentUser();
 
   return (
-    <header className="bg-white py-5">
-      <Container className="flex justify-between items-center text-lightColor">
-        <div className="w-auto md:h-1/3 flex items-center gap-5 justify-start md:gap-0">
+    <header className="bg-white/70 py-5 sticky top-0 z-50 backdrop-blur-md">
+      <Container className="flex justify-between items-center text-lightColor md:w-full">
+        <div className="w-1/3 md:h-1/3 flex items-center gap-5 justify-start md:gap-0">
           <MobileMenu></MobileMenu>
           <Logo></Logo>
         </div>

@@ -4,6 +4,15 @@
 import { defineLive } from "next-sanity/live";
 import { client } from './client'
 
+const token = process.env.SANITY_API_READ_TOKEN;
+if(!token){
+  throw new Error("Sanity API token is not found")
+}
 export const { sanityFetch, SanityLive } = defineLive({
   client,
+  serverToken: token,
+  browserToken:token,
+  fetchOptions:{
+    revalidate:0
+  }
 });

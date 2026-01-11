@@ -434,3 +434,43 @@ export type AllSanitySchemaTypes =
   | Geopoint;
 
 export declare const internalGroqTypeReferenceTo: unique symbol;
+
+// Source: sanity\queries\query.ts
+// Variable: BRANDS_QUERY
+// Query: *[_type=="brand"]| order(name asc)
+export type BRANDS_QUERY_RESULT = Array<{
+  _id: string;
+  _type: "brand";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  description?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+}>;
+
+// Source: sanity\queries\query.ts
+// Variable: LATEST_BLOG_QUERY
+// Query: *[_type == 'blog' && islatest ==true] | order(name asc){    ..., blogcategories[]->{    title    }    }
+export type LATEST_BLOG_QUERY_RESULT = Array<never>;
+
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    '*[_type=="brand"]| order(name asc)': BRANDS_QUERY_RESULT;
+    "*[_type == 'blog' && islatest ==true] | order(name asc){\n    ..., blogcategories[]->{\n    title\n    }\n    }": LATEST_BLOG_QUERY_RESULT;
+  }
+}

@@ -6,11 +6,12 @@ import Link from "next/link";
 import React from "react";
 import AddtoWishlistButton from "./AddtoWishlistButton";
 import PriceView from "./PriceView";
+import AddtoCartButton from "./AddtoCartButton";
 
 const ProductCard = ({ product }: { product: Product }) => {
-  console.log(product);
+  // console.log("Products: ",product);
   return (
-    <div className="text-sm border-[1px] border-blue-300 rounded-md  group">
+    <div className="text-sm border border-blue-300 rounded-md  group">
       <div className="relative group overflow-hidden bg-gray-50">
         {product?.images && (
           <Image
@@ -76,16 +77,24 @@ const ProductCard = ({ product }: { product: Product }) => {
         {/* Stock Status */}
         <section className="flex items-center gap-2.5 text-lg">
           <p className="font-medium">In Stock </p>
-          <p className={`${product?.stock ===0 ?"text-red-500 font-semibold":"text-green-700 font-semibold "}`}>
-            {(product?.stock as number) > 0 ? product?.stock : "Out of Stock"}
+          <p
+            className={`${product?.stock === 0 ? "text-red-500 font-semibold" : "text-green-700 font-semibold "}`}
+          >
+            {(product?.stock as number) > 0 ? product?.stock : "0"}
           </p>
         </section>
 
+        {/* price section */}
         <PriceView
-        price={product?.price}
-        discount={product?.discount}
-        className="text-sm"
+          price={product?.price}
+          discount={product?.discount}
+          className="text-sm"
         ></PriceView>
+
+        {/* Add to Cart */}
+        <AddtoCartButton product= {product} className="w-36 rounded-full">
+            
+        </AddtoCartButton>
       </div>
     </div>
   );

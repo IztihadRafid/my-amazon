@@ -7,7 +7,7 @@ interface Props{
     className?:string
 }
 const PriceView = ({price,discount,className}:Props) => {
-  console.log(discount)
+ 
   return (
     <div>
       <div className="relative">
