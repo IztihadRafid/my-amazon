@@ -7,4 +7,9 @@ const LATEST_BLOG_QUERY = defineQuery(`*[_type == 'blog' ] | order(name asc){
     }
     }`
 )
-export { BRANDS_QUERY,LATEST_BLOG_QUERY }
+const DEAL_PRODUCTS = defineQuery(
+    `*[_type  == 'product' && status == 'hot'] | order(name asc){
+    ..., "categories": categories[]->title
+    }`
+)
+export { BRANDS_QUERY,LATEST_BLOG_QUERY,DEAL_PRODUCTS }

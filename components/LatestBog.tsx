@@ -11,7 +11,7 @@ const LatestBog =async () => {
       <h4 className='text-2xl'>Latest Blog</h4>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5'>
         {blogs?.map((blog)=>(
-            <div key={blog} className='rounded-lg overflow-hidden'>
+            <div key={blog._id} className='rounded-lg overflow-hidden'>
                 {blog?.mainImage &&(
                     <Link href={`/blog/${blog?.slug?.current}`}>
                         <Image src={urlFor(blog?.mainImage).url()} alt='Blog image' width={500} height={500} className='w-full max-h-80 object-contain'></Image>
