@@ -3,17 +3,17 @@ import { urlFor } from "@/sanity/lib/image";
 import { FlameIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import AddtoWishlistButton from "./AddtoWishlistButton";
 import PriceView from "./PriceView";
 import AddtoCartButton from "./AddtoCartButton";
 
 const ProductCard = ({ product }: { product: Product }) => {
-  // console.log("Products: ",product);
+ 
   return (
     <div className="text-sm border border-blue-300 rounded-md  group">
       <div className="relative group overflow-hidden bg-gray-50">
         {product?.images && (
+          <Link href={`/product/${product?.slug?.current}`}>
           <Image
             src={urlFor(product?.images[0]).url()}
             alt="Product Image"
@@ -21,7 +21,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             width={700}
             height={700}
             className={`w-full h-64 object-contain overflow-hidden transition-transform bg-shop_light_bg hoverEffect ${product?.stock !== 0 ? "group-hover:scale-105" : "opacity-50"}`}
-          ></Image>
+          ></Image></Link>
         )}
         <AddtoWishlistButton product={product}></AddtoWishlistButton>
         {product?.status === "sale" && (

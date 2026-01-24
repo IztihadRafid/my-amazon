@@ -18,7 +18,7 @@ const CategoryProducts = ({ categories, slug }: Props) => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  // category chageing function
+  // category changing function
   const handleCategoryChange = (newSlug: string) => {
     if (newSlug === currentSlug) return;
     setCurrentSlug(newSlug);

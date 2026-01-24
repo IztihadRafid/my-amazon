@@ -8,7 +8,7 @@ import { getCategories } from "@/sanity/queries";
 
 export default async function Home () {
 const categories = await getCategories(6)
-console.log(categories)
+// console.log(categories)
   return (
     
     <Container className="bg-shop-light-pink">

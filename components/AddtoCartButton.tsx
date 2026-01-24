@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { ShoppingBag } from "lucide-react";
 
 interface Props {
-  product: Product;
+  product: Product  | null | undefined;
   className?: string;
 }
 const AddtoCartButton = ({ product, className }: Props) => {
