@@ -16,7 +16,7 @@ const HomeCategoroies = ({ categories }: { categories: Category[] }) => {
           >
             {category?.image && (
               <div className="overflow-hidden border  ">
-                <Link href={`category/${category?.slug?.current}`} className="flex gap-3 ">
+                <Link href={{pathname:'/shop',query:{category:category?.slug?.current}}} className="flex gap-3 ">
                   <Image
                     src={urlFor(category?.image).url()}
                     alt="Category Image"
@@ -28,7 +28,7 @@ const HomeCategoroies = ({ categories }: { categories: Category[] }) => {
                     <h4 className="text-lg font-semibold">{category.title}</h4>
                     <p>
                       <span className="font-bold text-shop_btn_dark_green">
-                        {`${category?.productCount}`}{" "}
+                        {`${category?.productCount }`}{" "}
                       </span>
                       items Available
                     </p>
