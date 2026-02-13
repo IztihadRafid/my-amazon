@@ -115,9 +115,9 @@ const Shop = ({ categories, brands }: Props) => {
               {loading ? (
                 <LoadingSpinner></LoadingSpinner>
               ) : products?.length > 0 ? (
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {products?.map((product) => (
-                    <ProductCard key={product?._id} product={product} />
+                    <ProductCard  key={product?._id} product={product} />
                   ))}
                 </div>
               ) : (

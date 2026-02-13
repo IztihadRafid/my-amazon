@@ -6,6 +6,7 @@ import Link from 'next/link'
 import dayjs from "dayjs"
 const LatestBog =async () => {
     const blogs = await getLatestBlogs()
+    console.log(blogs)
   return (
     <div className='mb-10 lg:mb-20'>
       <h4 className='text-2xl'>Latest Blog</h4>
