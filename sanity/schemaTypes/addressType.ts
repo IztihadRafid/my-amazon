@@ -44,18 +44,20 @@ export const addressType = defineType({
             name: 'zip',
             title: 'ZIP Code',
             type: 'string',
-            description: 'Format: 12345 or 12345-6789',
-            validation: (Rule) => Rule.required().regex(/^\d{5}(-\d{4})?$/, {
-                name: 'ZIP code',
-                invert: false,
-            })
-                .custom((zip: string | undefined) => {
-                    if (!zip) return "ZIP code is required";
-                    if (!zip.match(/^\d{5}(-\d{4})?$/)) {
-                        return "Please enter a valid ZIP code format (e.g., 12345 or 12345-6789)";
-                    }
-                    return true;
-                }),
+            description: 'Format: 1234',
+            validation: (Rule) =>
+                Rule.required()
+                    .regex(/^\d{4}$/, {
+                        name: 'ZIP code',
+                        invert: false,
+                    })
+                    .custom((zip: string | undefined) => {
+                        if (!zip) return "ZIP code is required";
+                        if (!zip.match(/^\d{4}$/)) {
+                            return "Please enter a valid 4-digit ZIP code (e.g., 1234)";
+                        }
+                        return true;
+                    }),
         }),
         defineField({
             name: 'default',

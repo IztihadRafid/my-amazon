@@ -14,7 +14,7 @@ const PriceFormatter = ({ amount, className }: Props) => {
     <span
       className={cn(" text-lg font-semibold text-darkColor", className)}
     >
-      {formattedPrice}
+      {formattedPrice}Tk/-
     </span>
   );
 };
